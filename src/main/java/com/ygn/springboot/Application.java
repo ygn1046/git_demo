@@ -32,6 +32,7 @@ public class Application {
         }
         User user = ioc.getBean(User.class);
         System.out.println(user);
+        System.out.println("123");
     }
 
 }
