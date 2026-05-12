@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygn.springboot.mapper.FileUploadRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.ygn.springboot.domain.FileUploadRecord">
+            <id property="id" column="id" />
+            <result property="fileKey" column="file_key" />
+            <result property="fileName" column="file_name" />
+            <result property="fileSize" column="file_size" />
+            <result property="fileHash" column="file_hash" />
+            <result property="fileSuffix" column="file_suffix" />
+            <result property="bucketName" column="bucket_name" />
+            <result property="objectName" column="object_name" />
+            <result property="uploadStatus" column="upload_status" />
+            <result property="uploadedSize" column="uploaded_size" />
+            <result property="totalChunks" column="total_chunks" />
+            <result property="uploadedChunks" column="uploaded_chunks" />
+            <result property="uploadStartTime" column="upload_start_time" />
+            <result property="uploadEndTime" column="upload_end_time" />
+            <result property="createTime" column="create_time" />
+            <result property="updateTime" column="update_time" />
+            <result property="isDeleted" column="is_deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,file_key,file_name,file_size,file_hash,file_suffix,
+        bucket_name,object_name,upload_status,uploaded_size,total_chunks,
+        uploaded_chunks,upload_start_time,upload_end_time,create_time,update_time,
+        is_deleted
+    </sql>
+</mapper>

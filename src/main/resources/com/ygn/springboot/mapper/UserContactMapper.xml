@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygn.springboot.mapper.UserContactMapper">
+
+    <resultMap id="BaseResultMap" type="com.ygn.springboot.domain.UserContact">
+            <result property="id" column="id" />
+            <result property="uid" column="uid" />
+            <result property="bucket" column="bucket" />
+            <result property="object" column="object" />
+            <result property="updateTime" column="update_time" />
+            <result property="createTime" column="create_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,bucket,object,update_time,create_time
+    </sql>
+</mapper>

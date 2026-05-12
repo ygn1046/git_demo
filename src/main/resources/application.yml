@@ -1,0 +1,45 @@
+spring:
+ server:
+  tomcat:
+   max-swallow-size: 30MB       # 与max-file-size一致
+   max-http-form-post-size: 100MB
+   connection-timeout: 30000    # 30秒超时
+ servlet:
+  multipart:
+   max-file-size: 30MB        # 略大于你的分片大小
+   max-request-size: 100MB    # 允许多个并发分片
+   file-size-threshold: 1MB   # 1MB以上写入临时文件
+   resolve-lazily: true       # 延迟解析，提高性能
+ application:
+  name: ygn
+ datasource:
+  url: jdbc:mysql://localhost:3306/minio?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+  username: root
+  password: 123456
+  driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+ port: 8080
+ servlet:
+  context-path: /api
+ tomcat:
+  max-http-form-post-size: 100MB
+management:
+ endpoints:
+  web:
+   exposure:
+    include: env
+ endpoint:
+  env:
+   enabled: true
+   show-values: ALWAYS
+  configprops:
+   show-values: ALWAYS
+minio-config:
+ endpoint: http://124.223.222.47:9000
+ accessKey: admin
+ secretKey: admin123456
+mybatis-plus:
+ mapper-locations: classpath:mapper/*.xml
+upload:
+ chunk-size: 5242880  # 5MB
+ max-size: 10737418240  # 10GB
